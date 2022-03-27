@@ -1,0 +1,43 @@
+.buttonsBasic {
+    width: 390px;
+    display: grid;
+    grid-template-areas: 
+    'one two three'
+    'four five six'
+    'seve eight nine'
+    'zero delete empty';
+    grid-gap: 3px;
+    margin: auto;
+    justify-items: center;
+    padding: 70px;
+    background-color: rgb(0, 0, 0);
+    border: solid rgb(22, 8, 219) 7px;
+    border-radius: 100%;
+
+}
+.btn{
+    text-align: center;
+    width: 60px;
+    color: yellow;
+    border: solid rgb(22, 8, 219) 4px;
+    padding: 15px;
+    font-size: 3em;
+    border-radius: 100%;
+    background: grey;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+}
+.commandButton{
+    text-align: center;
+    width: 60px;
+    color: yellow;
+    border: solid rgb(22, 8, 219) 4px;
+    padding: 15px;
+    font-size: 3em;
+    border-radius: 100%;
+    background: grey;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+}
