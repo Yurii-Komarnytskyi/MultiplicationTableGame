@@ -1,13 +1,11 @@
 import './App.css';
-import CrossRoads from './components/CrossRoads';
-import Menu from './components/menu/Menu';
+import GameContainer from './components/game_comp/GameContainer';
 import ScorePanel from './components/scorepanel/ScorePanel';
 
 function App() {
   return (
     <main className="main_cont">
-      <Menu />
-      <CrossRoads />
+      <GameContainer />
       <ScorePanel />
     </main>
   );

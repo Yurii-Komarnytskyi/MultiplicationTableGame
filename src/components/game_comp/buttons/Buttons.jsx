@@ -3,7 +3,8 @@ import cl from './Buttons.module.css'
 import EnteredValue from './../EnteredValue';
 import {createRandom} from './../../../myFunctions';
 const Buttons = ({ playersAnsw, setPlayersAnsw, setRandQuest }) => {
-    const obtInt = (e) => setPlayersAnsw((playAnsw) => playAnsw + e.target.innerText);
+    const obtInt = (e) => setPlayersAnsw((playAnsw)=> playAnsw + e.target.innerText);
+    const deleteChar = () => setPlayersAnsw((playAnsw)=> playAnsw.substring(0, playAnsw.length-1));
     const handleButtonNext = () => setRandQuest(createRandom());
     return (
         <div>
@@ -19,7 +20,7 @@ const Buttons = ({ playersAnsw, setPlayersAnsw, setRandQuest }) => {
                 <div onClick={e => obtInt(e)} className={cl.btn}>8</div>
                 <div onClick={e => obtInt(e)} className={cl.btn}>9</div>
                 <div onClick={e => obtInt(e)} className={cl.btn}>0</div>
-                <div className={cl.commandButton} >del</div>
+                <div onClick={deleteChar} className={cl.commandButton} >del</div>
                 <div onClick={handleButtonNext} 
                 className={cl.commandButton} >next</div>
             </div >
