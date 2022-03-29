@@ -13,14 +13,4 @@
   display: flex;
   width: 70%;
   height: 500px;
-  /* outline:1px solid yellow; */
 }
-
-/* .game_cont {
-  display: flex;
-  position: absolute;
-  justify-self: right;
-  width: 80%;
-  height: 500px;
-  border: solid grey 5px;
-} */

@@ -3,9 +3,11 @@ import Buttons from './buttons/Buttons';
 import cl from './GameContainer.module.css';
 import GenerateQuestion from './GenerateQuestion';
 import { createRandom, extractCorrectAnsw, compareGathered } from './../../myFunctions';
+import ScorePanel from '../scorepanel/ScorePanel';
 
-const GameContainer = ({score}) => {
-  const [playersAnsw, setPlayersAnsw] = useState('')
+const GameContainer = () => {
+  const [score, setScore] = useState([]);
+  const [playersAnsw, setPlayersAnsw] = useState('');
   const [correctAnsw, setCorrectAnsw] = useState(null);
   const [randQuest, setRandQuest] = useState(createRandom());
 
@@ -13,7 +15,8 @@ const GameContainer = ({score}) => {
   
   useMemo(() => {
     setCorrectAnsw(extractCorrectAnsw(randQuest));
-    compareGathered(playersAnsw, correctAnsw, score);
+    // compareGathered(playersAnsw, correctAnsw);
+    setScore([...score, compareGathered(playersAnsw, correctAnsw)]);
     setPlayersAnsw('')
   }, [randQuest]);
 
@@ -31,6 +34,7 @@ const GameContainer = ({score}) => {
         setCorrectAnsw={setCorrectAnsw}
         setRandQuest={setRandQuest}
       />
+      <ScorePanel score={score} />
     </div>
   )
 }
