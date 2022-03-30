@@ -1,11 +1,50 @@
+.almighty_wrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
 .tetris {    
     display: flex;
     flex-direction: column;
-    width: 700px;
-    height: 500px;
+    /* width: 700px; */
+    
     border: solid grey 5px;
     padding: 50px;
     /* margin: auto; */
+}
+.score_style{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+
+    /* width: 30%;
+    height: 100%; */
+    padding: 20px;
+    outline:1px solid red;
+}
+.score_style > h1{
+    border: 2px solid brown;
+    padding: 10px;
+}
+.score_style > div > h2{
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+.score_wrapper{
+    margin-left: auto;
+    position: relative;
+}
+/* .almighty_wrapper.tetris{
+    display: flex;
+    flex: 3;
+}
+.almighty_wrapper.score_style{
+    display: flex;
+    flex: 1;
+} */
+.score_lightballs{
+    display: flex;
+    flex-direction: column;
 }
 
 .generatedQuestion {
@@ -20,3 +59,4 @@
     font-size: 2em;
     height: fit-content;
 }
+

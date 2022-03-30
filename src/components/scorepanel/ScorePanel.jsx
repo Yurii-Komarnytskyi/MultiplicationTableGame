@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import cl from './ScorePanel.module.css'
-const ScorePanel = ({score}) => {
-  // console.log('Array.isArray(score): ', Array.isArray(score))
-  // console.log(...score)
+import React, { Children, useEffect, useState } from 'react'
+import LightBall from './LightBall';
+
+const ScorePanel = ({score, cl}) => {
   return (
-    <div className={cl.content}>
-      <h1>HERE WILL BE SCORE :</h1> <br />
-      <div>
+    <div className={cl.score_style}>
+      <h1>SEE THE SCORE BELOW :</h1> <br />
+      <div className={cl.score_lightballs}>
         {score.map(item =>
-          <h1>{item}</h1>
+          <LightBall props={item}></LightBall>
         )}
       </div>
     </div>

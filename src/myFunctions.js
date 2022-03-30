@@ -10,5 +10,5 @@ const extractCorrectAnsw = (str) => +str[0] * +str.slice(4, 5);
 //         console.log('Score in false');
 //     }
 // }
-const compareGathered = (enteredVal, corectAnsw,) => (+enteredVal === corectAnsw)? 'true' : 'false';
+const compareGathered = (enteredVal, corectAnsw,) => (+enteredVal === corectAnsw)? 't' : 'f';
 export {randomInt, createRandom, compareGathered, extractCorrectAnsw}; 

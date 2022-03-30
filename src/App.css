@@ -2,15 +2,22 @@
   display: flex;
   position: relative;
 }
-.main_cont > div {
-  flex: 1;
-}
-.main_cont > .middle_cont {
-  flex: 4;
-}
 
-.middle_cont{
+/* .tetris {    
   display: flex;
-  width: 70%;
+  flex-direction: column;
+  width: 700px;
   height: 500px;
-}
+  border: solid grey 5px;
+  padding: 50px;
+  
+} */
+/* .score_wrapper {
+  color: red;
+  margin-left:auto;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  outline:1px solid red;
+} */

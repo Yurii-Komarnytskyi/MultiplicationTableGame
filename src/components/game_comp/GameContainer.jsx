@@ -6,36 +6,43 @@ import { createRandom, extractCorrectAnsw, compareGathered } from './../../myFun
 import ScorePanel from '../scorepanel/ScorePanel';
 
 const GameContainer = () => {
-  const [score, setScore] = useState([]);
+  const [score, setScore] = useState([
+    { name: '', key: Date.now() }
+  ]);
   const [playersAnsw, setPlayersAnsw] = useState('');
   const [correctAnsw, setCorrectAnsw] = useState(null);
   const [randQuest, setRandQuest] = useState(createRandom());
 
-  useEffect(()=> console.log(playersAnsw),[playersAnsw]);
-  
+  useEffect(() => console.log(playersAnsw), [playersAnsw]);
+
   useMemo(() => {
     setCorrectAnsw(extractCorrectAnsw(randQuest));
     // compareGathered(playersAnsw, correctAnsw);
-    setScore([...score, compareGathered(playersAnsw, correctAnsw)]);
+    setScore([...score, { name: compareGathered(playersAnsw, correctAnsw), key: Date.now() }]);
     setPlayersAnsw('')
   }, [randQuest]);
 
 
 
   return (
-    <div className={cl.tetris}>
-      <GenerateQuestion
-        randQuest={randQuest}
-      />
-      <Buttons
-        playersAnsw={playersAnsw}
-        setPlayersAnsw={setPlayersAnsw}
-        correctAnsw={correctAnsw}
-        setCorrectAnsw={setCorrectAnsw}
-        setRandQuest={setRandQuest}
-      />
-      <ScorePanel score={score} />
+    <div className={cl.almighty_wrapper}>
+      <div className={cl.tetris}>
+        <GenerateQuestion
+          randQuest={randQuest}
+        />
+        <Buttons
+          playersAnsw={playersAnsw}
+          setPlayersAnsw={setPlayersAnsw}
+          correctAnsw={correctAnsw}
+          setCorrectAnsw={setCorrectAnsw}
+          setRandQuest={setRandQuest}
+        />
+      </div>
+      <div className={cl.score_wrapper}>
+        <ScorePanel cl={cl} score={score} />
+      </div>
     </div>
+
   )
 }
 
