@@ -16,9 +16,6 @@
     display: flex;
     flex-direction: column;
     margin-right: auto;
-
-    /* width: 30%;
-    height: 100%; */
     padding: 20px;
     outline:1px solid red;
 }
@@ -34,19 +31,11 @@
     margin-left: auto;
     position: relative;
 }
-/* .almighty_wrapper.tetris{
-    display: flex;
-    flex: 3;
-}
-.almighty_wrapper.score_style{
-    display: flex;
-    flex: 1;
-} */
 .score_lightballs{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 460px;
 }
-
 .generatedQuestion {
     background: chocolate;
     text-align: center;
@@ -60,3 +49,11 @@
     height: fit-content;
 }
 
+/* .almighty_wrapper.tetris{
+    display: flex;
+    flex: 3;
+}
+.almighty_wrapper.score_style{
+    display: flex;
+    flex: 1;
+} */
