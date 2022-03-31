@@ -9,15 +9,15 @@ const GameContainer = () => {
   const [score, setScore] = useState([
     { name: '', key: Date.now() }
   ]);
+  const [gameMode, setGameMode] = useState(`default`);
   const [playersAnsw, setPlayersAnsw] = useState('');
   const [correctAnsw, setCorrectAnsw] = useState(null);
-  const [randQuest, setRandQuest] = useState(createRandom());
+  const [randQuest, setRandQuest] = useState(createRandom(gameMode));
 
   useEffect(() => console.log(playersAnsw), [playersAnsw]);
 
   useMemo(() => {
     setCorrectAnsw(extractCorrectAnsw(randQuest));
-    // compareGathered(playersAnsw, correctAnsw);
     setScore([...score, { name: compareGathered(playersAnsw, correctAnsw), key: Date.now() }]);
     setPlayersAnsw('')
   }, [randQuest]);
@@ -35,11 +35,16 @@ const GameContainer = () => {
           setPlayersAnsw={setPlayersAnsw}
           correctAnsw={correctAnsw}
           setCorrectAnsw={setCorrectAnsw}
+          gameMode={gameMode}
           setRandQuest={setRandQuest}
         />
       </div>
       <div className={cl.score_wrapper}>
-        <ScorePanel cl={cl} score={score} />
+        <ScorePanel cl={cl}
+          score={score}
+          gameMode={gameMode}
+          setGameMode={setGameMode}
+        />
       </div>
     </div>
 

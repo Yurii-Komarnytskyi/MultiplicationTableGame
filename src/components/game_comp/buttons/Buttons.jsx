@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import cl from './Buttons.module.css'
 import EnteredValue from './../EnteredValue';
 import {createRandom} from './../../../myFunctions';
-const Buttons = ({ playersAnsw, setPlayersAnsw, setRandQuest }) => {
+const Buttons = ({ playersAnsw, setPlayersAnsw, gameMode, setRandQuest }) => {
     const obtInt = (e) => setPlayersAnsw((playAnsw)=> playAnsw + e.target.innerText);
     const deleteChar = () => setPlayersAnsw((playAnsw)=> playAnsw.substring(0, playAnsw.length-1));
-    const handleButtonNext = () => setRandQuest(createRandom());
+    const handleButtonNext = () => setRandQuest(createRandom(gameMode));
     return (
         <div>
             <EnteredValue playersAnsw={playersAnsw} />
