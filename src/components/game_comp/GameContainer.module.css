@@ -15,7 +15,6 @@
 .score_style{
     display: flex;
     flex-direction: column;
-    /* margin-right: auto; */
     padding: 20px;
     outline:1px solid red;
 }
@@ -37,24 +36,3 @@
     width: 460px;
     padding: 0 5px 0 5px;
 }
-.generatedQuestion {
-    background: chocolate;
-    text-align: center;
-    font-size: 2em;
-    height: fit-content;
-}
-.enteredVal {
-    background: lightcoral;
-    text-align: center;
-    font-size: 2em;
-    height: fit-content;
-}
-
-/* .almighty_wrapper.tetris{
-    display: flex;
-    flex: 3;
-}
-.almighty_wrapper.score_style{
-    display: flex;
-    flex: 1;
-} */

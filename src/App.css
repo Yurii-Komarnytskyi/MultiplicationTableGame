@@ -2,22 +2,3 @@
   display: flex;
   position: relative;
 }
-
-/* .tetris {    
-  display: flex;
-  flex-direction: column;
-  width: 700px;
-  height: 500px;
-  border: solid grey 5px;
-  padding: 50px;
-  
-} */
-/* .score_wrapper {
-  color: red;
-  margin-left:auto;
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  outline:1px solid red;
-} */

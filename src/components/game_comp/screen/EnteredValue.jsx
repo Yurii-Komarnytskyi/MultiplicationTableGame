@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './GameContainer.module.css';
+import cl from './Screen.module.css';
 
 const EnteredValue = ({playersAnsw}) => {
   return (
@@ -9,4 +9,4 @@ const EnteredValue = ({playersAnsw}) => {
   )
 }
 
-export default EnteredValue
+export default EnteredValue;

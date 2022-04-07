@@ -1,0 +1,21 @@
+.screenWrapper{
+    width: 80%;
+    height: 150px;
+    margin: 0 auto;
+    background: rgb(133, 130, 130);
+
+}
+.generatedQuestion {
+    text-align: left;
+    padding:5px 0 0 20px;
+    font-size: 3.5em;
+    height: fit-content;
+}
+.enteredVal {
+    display: flex;  
+    justify-content: center;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 3em;
+    height: fit-content;
+}

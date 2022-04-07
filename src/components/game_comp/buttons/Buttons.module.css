@@ -31,13 +31,17 @@
 .commandButton{
     text-align: center;
     width: 60px;
-    color: yellow;
     border: solid rgb(22, 8, 219) 4px;
     padding: 15px;
     font-size: 3em;
     border-radius: 100%;
-    background: grey;
     cursor: pointer;
     user-select: none;
     align-items: center;
+}
+.commandButton.next{
+    background: green;
+}
+.commandButton.delete{
+    background: red;
 }

@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Buttons from './buttons/Buttons';
 import cl from './GameContainer.module.css';
-import GenerateQuestion from './GenerateQuestion';
 import { createRandom, extractCorrectAnsw, compareGathered } from './../../myFunctions';
 import ScorePanel from '../scorepanel/ScorePanel';
-
+import Screen from './screen/Screen';
 const GameContainer = () => {
   const [score, setScore] = useState([
     { name: '', key: Date.now() }
@@ -22,13 +21,16 @@ const GameContainer = () => {
     setPlayersAnsw('')
   }, [randQuest]);
 
-
-
   return (
     <div className={cl.almighty_wrapper}>
       <div className={cl.tetris}>
-        <GenerateQuestion
+        {/* <GenerateQuestion
           randQuest={randQuest}
+        /> */}
+        <Screen 
+        randQuest={randQuest}
+        playersAnsw={playersAnsw}
+        
         />
         <Buttons
           playersAnsw={playersAnsw}
@@ -47,8 +49,6 @@ const GameContainer = () => {
         />
       </div>
     </div>
-
   )
 }
-
 export default GameContainer;

@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import cl from './GameModes.module.css';
 
 const GameModes = ({ gameMode, setGameMode }) => {
-    useEffect(() => {
-        console.log('typeof gameMode: ', typeof gameMode);
-        console.log('gameMode: ', gameMode)
-    }, [gameMode])
     return (
         <div>
             <span>Select exact digit you'd like to get practice with: </span>
