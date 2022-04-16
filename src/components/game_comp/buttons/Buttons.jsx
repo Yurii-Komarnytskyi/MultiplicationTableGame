@@ -8,7 +8,7 @@ const Buttons = ({setPlayersAnsw, gameMode, setRandQuest }) => {
     return (
         <div>
             <div className={cl.buttonsBasic} >
-                <div onClick={e => obtInt(e)} className={cl.btn}>1</div>
+                <div onClick={e => obtInt(e)} className={cl.btn}>1</div> {/*use loop for creating numbers here */}
                 <div onClick={e => obtInt(e)} className={cl.btn}>2</div >
                 <div onClick={e => obtInt(e)} className={cl.btn}>3</div>
                 <div onClick={e => obtInt(e)} className={cl.btn}>4</div>

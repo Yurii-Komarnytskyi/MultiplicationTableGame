@@ -1,5 +1,5 @@
 import React from 'react';
-import cl from './Screen.module.css';
+import cl from './Screen.module.css'; // bad naming and file import
 
 const GenerateQuestion = ({randQuest}) => {
   return (

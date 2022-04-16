@@ -4,7 +4,7 @@ import cl from './Screen.module.css';
 const EnteredValue = ({playersAnsw}) => {
   return (
     <div className={cl.enteredVal}>
-      {playersAnsw? playersAnsw: `0.0`}
+      {playersAnsw? playersAnsw: `0.0`} {/* playerAnsw || '0.0' */}
     </div>
   )
 }
