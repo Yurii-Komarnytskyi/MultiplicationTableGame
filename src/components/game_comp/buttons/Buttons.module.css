@@ -1,47 +1,34 @@
 .buttonsBasic {
-    width: 390px;
+    width: 360px;
     display: grid;
     grid-template-areas: 
     'one two three'
     'four five six'
     'seve eight nine'
     'zero delete empty';
-    grid-gap: 3px;
-    margin: auto;
+    grid-gap: 10px;
     justify-items: center;
-    padding: 40px;
-    background-color: rgb(26, 23, 27);
-    border: solid rgb(22, 8, 219) 7px;
+    padding: 2  5px 0 0 0;
+    background: rgb(150, 3, 150);
     border-radius: 10%;
-
 }
 .btn{
     text-align: center;
     width: 60px;
-    color: yellow;
-    border: solid rgb(22, 8, 219) 4px;
+    color: black;
+    border: solid rgb(22, 8, 219) 2px;
     padding: 15px;
     font-size: 3em;
     border-radius: 100%;
-    background: grey;
+    background: rgb(215, 215, 15);
     cursor: pointer;
     user-select: none;
     align-items: center;
 }
-.commandButton{
-    text-align: center;
-    width: 60px;
-    border: solid rgb(22, 8, 219) 4px;
-    padding: 15px;
-    font-size: 3em;
-    border-radius: 100%;
-    cursor: pointer;
-    user-select: none;
-    align-items: center;
-}
-.commandButton.next{
+.btn.next{
     background: green;
+    font-weight:600;
 }
-.commandButton.delete{
+.btn.delete{
     background: red;
 }

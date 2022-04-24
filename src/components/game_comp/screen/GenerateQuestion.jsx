@@ -1,9 +1,9 @@
 import React from 'react';
-import cl from './Screen.module.css';
+import styles from './GameDisplay.module.css';
 
-const GenerateQuestion = ({randQuest}) => {
+const GenerateQuestion = ({ randQuest }) => {
   return (
-    <div className={cl.generatedQuestion}>
+    <div className={styles.generatedQuestion}>
       {randQuest}
     </div>
   )

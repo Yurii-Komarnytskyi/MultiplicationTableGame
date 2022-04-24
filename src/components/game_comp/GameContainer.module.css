@@ -6,33 +6,10 @@
 .tetris {    
     display: flex;
     flex-direction: column;
-    /* width: 700px; */
-    
-    border: solid grey 5px;
+    align-items: flex-end;
     padding: 50px;
-    /* margin: auto; */
+    background: rgb(150, 3, 150);
+    border: solid grey 5px;
+    border-radius: 50px;
 }
-.score_style{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    outline:1px solid red;
-}
-.score_style > h1{
-    border: 2px solid brown;
-    padding: 10px;
-}
-.score_style > div > h2{
-    display: inline-block;
-    margin: 0 5px 0 5px;
-}
-.score_wrapper{
-    margin-left: auto;
-    position: relative;
-}
-.score_lightballs{
-    display: flex;
-    flex-wrap: wrap;
-    width: 460px;
-    padding: 0 5px 0 5px;
-}
+

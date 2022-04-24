@@ -5,4 +5,10 @@ const createRandom = (arg) => {
 }
 const extractCorrectAnsw = (str) => +str[0] * +str.slice(4, 5);
 const compareGathered = (enteredVal, corectAnsw,) => (+enteredVal === corectAnsw)? 't' : 'f';
-export {randomInt, createRandom, compareGathered, extractCorrectAnsw}; 
+
+export {
+    randomInt,
+    createRandom,
+    compareGathered,
+    extractCorrectAnsw
+};

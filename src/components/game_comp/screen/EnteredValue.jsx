@@ -1,10 +1,10 @@
 import React from 'react';
-import cl from './Screen.module.css';
+import styles from './GameDisplay.module.css';
 
 const EnteredValue = ({playersAnsw}) => {
   return (
-    <div className={cl.enteredVal}>
-      {playersAnsw? playersAnsw: `0.0`}
+    <div className={[styles.screenWrapper, styles.enteredVal].join(' ')}>
+      {playersAnsw || `0.0`}
     </div>
   )
 }

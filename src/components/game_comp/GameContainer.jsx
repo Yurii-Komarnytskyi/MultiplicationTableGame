@@ -1,36 +1,30 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Buttons from './buttons/Buttons';
-import cl from './GameContainer.module.css';
-import { createRandom, extractCorrectAnsw, compareGathered } from './../../myFunctions';
+import styles from './GameContainer.module.css';
+import { createRandom, extractCorrectAnsw, compareGathered } from '../../helpers';
 import ScorePanel from '../scorepanel/ScorePanel';
-import Screen from './screen/Screen';
+import GameDisplay from './screen/GameDisplay';
+
 const GameContainer = () => {
-  const [score, setScore] = useState([
-    { name: '', key: Date.now() }
-  ]);
+  const [score, setScore] = useState([]);
   const [gameMode, setGameMode] = useState(`default`);
   const [playersAnsw, setPlayersAnsw] = useState('');
   const [correctAnsw, setCorrectAnsw] = useState(null);
   const [randQuest, setRandQuest] = useState(createRandom(gameMode));
-
-  useEffect(() => console.log(playersAnsw), [playersAnsw]);
-
-  useMemo(() => {
+ 
+  useEffect(() => {
+    console.log('useEffect fired!!!', ...score);
     setCorrectAnsw(extractCorrectAnsw(randQuest));
     setScore([...score, { name: compareGathered(playersAnsw, correctAnsw), key: Date.now() }]);
-    setPlayersAnsw('')
+    setPlayersAnsw('');
   }, [randQuest]);
 
   return (
-    <div className={cl.almighty_wrapper}>
-      <div className={cl.tetris}>
-        {/* <GenerateQuestion
-          randQuest={randQuest}
-        /> */}
-        <Screen 
+    <div className={styles.almighty_wrapper}>
+      <div className={styles.tetris}>
+        <GameDisplay 
         randQuest={randQuest}
         playersAnsw={playersAnsw}
-        
         />
         <Buttons
           playersAnsw={playersAnsw}
@@ -41,8 +35,8 @@ const GameContainer = () => {
           setRandQuest={setRandQuest}
         />
       </div>
-      <div className={cl.score_wrapper}>
-        <ScorePanel cl={cl}
+      <div className={styles.score_wrapper}>
+        <ScorePanel
           score={score}
           gameMode={gameMode}
           setGameMode={setGameMode}

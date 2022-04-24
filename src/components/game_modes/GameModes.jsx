@@ -1,23 +1,16 @@
-import React, { useEffect } from 'react';
-import cl from './GameModes.module.css';
-
-const GameModes = ({ gameMode, setGameMode }) => {
+import styles from './GameModes.module.css';
+const GameModes = ({setGameMode }) => {
     return (
         <div>
             <span>Select exact digit you'd like to get practice with: </span>
             <select
-                className={cl.modes_selector}
+                className={styles.modes_selector}
                 onChange={e => setGameMode(e.target.value)}
             >
                 <option value={'default'}>default (2 to 9)</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-                <option value={6}>6</option>
-                <option value={7}>7</option>
-                <option value={8}>8</option>
-                <option value={9}>9</option>
+                {[2,3,4,5,6,7,8,9].map(val =>
+                    <option value={val} >{val}</option> 
+                )}
             </select>
         </div>
     )
