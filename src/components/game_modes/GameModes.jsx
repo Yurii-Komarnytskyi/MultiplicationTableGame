@@ -8,8 +8,8 @@ const GameModes = ({setGameMode }) => {
                 onChange={e => setGameMode(e.target.value)}
             >
                 <option value={'default'}>default (2 to 9)</option>
-                {[2,3,4,5,6,7,8,9].map(val =>
-                    <option value={val} >{val}</option> 
+                {[2,3,4,5,6,7,8,9].map((val, ind) =>
+                    <option value={val} key={ind}>{val}</option> 
                 )}
             </select>
         </div>

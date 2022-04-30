@@ -12,7 +12,7 @@ const ScorePanel = ({score, gameMode, setGameMode}) => {
       <h1>SEE THE SCORE BELOW :</h1> <br />
       <div className={styles.score_lightballs}>
         {score.map((item, index) =>
-          index !==0 && <LightDisc props={item} ></LightDisc> // starts bugging while having key prop in LightBall
+          index !==0 && <LightDisc props={item} key={index}></LightDisc> // starts bugging while having key prop in LightBall
         )}
       </div>
     </div>

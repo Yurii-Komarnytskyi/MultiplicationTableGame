@@ -13,7 +13,6 @@ const GameContainer = () => {
   const [randQuest, setRandQuest] = useState(createRandom(gameMode));
  
   useEffect(() => {
-    console.log('useEffect fired!!!', ...score);
     setCorrectAnsw(extractCorrectAnsw(randQuest));
     setScore([...score, { name: compareGathered(playersAnsw, correctAnsw), key: Date.now() }]);
     setPlayersAnsw('');

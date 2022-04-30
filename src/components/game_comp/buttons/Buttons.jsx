@@ -6,8 +6,8 @@ const Buttons = ({ setPlayersAnsw, gameMode, setRandQuest }) => {
     const handleButtonNext = () => setRandQuest(createRandom(gameMode));
     return (
         <div className={styles.buttonsBasic} >
-            {[1,2,3,4,5,6,7,8,9,0].map(val =>
-                <div onClick={e => obtInt(e)} className={styles.btn}>{val}</div >
+            {[1,2,3,4,5,6,7,8,9,0].map((val, ind) =>
+                <div onClick={e => obtInt(e)} key={ind} className={styles.btn}>{val}</div >
             )}
             <div onClick={deleteChar} className={[styles.btn, styles.delete].join(' ')} >Del</div>
             <div onClick={handleButtonNext}
