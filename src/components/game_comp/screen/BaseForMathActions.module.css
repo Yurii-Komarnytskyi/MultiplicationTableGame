@@ -1,0 +1,17 @@
+.wrapperForMathBase{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    background: rgb(133, 130, 130);
+}
+.generatedQuestion {
+    font-size: 1.4em;
+}
+
+.enteredVal {
+    border: none;
+    background: rgb(133, 130, 130);;
+    font-size: 1.4em;
+    width: 30%;
+    margin-left: 30px;
+}
