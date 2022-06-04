@@ -1,0 +1,12 @@
+.almighty_wrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.tetris {    
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background-color: antiquewhite;
+}
+
