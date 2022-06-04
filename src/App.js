@@ -1,9 +1,7 @@
-import './App.css';
-import GameContainer from './components/game_comp/GameContainer';
-
+import GameContainer from "./components/container/GameContainer";
 function App() { 
   return (
-    <main className="main_cont">
+    <main>
       <GameContainer />
     </main>
   );

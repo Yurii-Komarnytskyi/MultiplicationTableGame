@@ -1,14 +1,9 @@
-import GameModes from '../game_modes/GameModes';
-import LightDisc from './LightDisc';
+import LightDisc from '../lightElem/LightDisc';
 import styles from './ScorePanel.module.css';
 
-const ScorePanel = ({score, gameMode, setGameMode}) => {
+const ScorePanel = ({score}) => {
   return (
     <div className={styles.score_style}>
-      <GameModes 
-        setGameMode={setGameMode}
-        gameMode={gameMode}
-      />
       <h1>SEE THE SCORE BELOW :</h1> <br />
       <div className={styles.score_lightballs}>
         {score.map((item, index) =>

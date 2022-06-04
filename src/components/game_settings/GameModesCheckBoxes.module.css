@@ -1,0 +1,9 @@
+.modesWrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.boxes{
+    display: flex;
+    user-select: none;
+}
