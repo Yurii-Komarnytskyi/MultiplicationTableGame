@@ -1,63 +1,73 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './GameModesCheckBoxes.module.css';
-import { ONE_TO_NINE,extractCorrectAnsw, createRandom } from '../../helpers';
+import { TWO_TO_NINE } from '../../utils';
 
-const GameModesCheckBoxes = ({ 
-    setGameMode, 
-    gameMode,}) => {
+const GameModesCheckBoxes = ({
+  setGameMode,
+  gameMode,
+  areAllTablesChecked,
+  setAreAllTablesChecked, }) => {
 
-    let hasDefModeToggled = false;
-    const obtainDefModeCheckBox = useRef(null);
+  const allTablesCheckBox = useRef(null);  
+  const [boxesFromTwoToNine, setBoxesFromTwoToNine] = useState([...Array.from(Array(8)).map((val, ind) => ([val = ind + 2, false]))]);
 
-    // const handleOneToNine = () => {
-    //     if (gameMode.length === 8){
-    //         hasDefModeToggled = !hasDefModeToggled;
-    //         setGameMode([]);
-    //     } else  setGameMode(ONE_TO_NINE);
+  useEffect(() => {
+    setGameMode(boxesFromTwoToNine.reduce((acc, val) => {
+        if(val[1] === true) {
+        acc.push(val[0]);
+        return acc;
+      } 
+      return acc
+    },[]))
+    console.log('gameMode: ', gameMode)
+  }, [boxesFromTwoToNine])
 
-    //     console.log(gameMode, hasDefModeToggled)
-    // }
-    const handleSinglePick = (e) => {
-        // if (hasDefModeToggled) {
-        //     console.log(obtainDefModeCheckBox.current.checked);
-        //     obtainDefModeCheckBox.current.style.backgroundColor = "blue";
-        //     return setGameMode([e.target.value]);
-        // }
-        if (gameMode.includes(Number(e.target.value))) return setGameMode(arr => arr.filter(val => val !== Number(e.target.value)));
-        return setGameMode((arr) => [...arr, Number(e.target.value)])
+  const handleAllTables = () => {
+    if (areAllTablesChecked) {
+      setAreAllTablesChecked(bool => !bool); // changes areAllTablesChecked to FALSE
+      setGameMode([]);
+    }else {
+      setAreAllTablesChecked(bool => !bool); // changes areAllTablesChecked to TRUE
+      setGameMode(TWO_TO_NINE);
+      setBoxesFromTwoToNine(prevArr => prevArr.map((_, ind) => [ind+2, false]));
     }
-    
-    return (
-        <div className={styles.modesWrapper}> 
-            <span>Select check-boxes with an equivalent numbers you'd like to get practice with: </span>
-            <br />
-            
+  }
 
-            {/* DEFAULT 2 TO 9 */}
-            {/* <label className={styles.boxes}>  
-                <input
-                    onChange={handleOneToNine}
-                    type='checkbox'
-                    // checked={true}
-                    ref={obtainDefModeCheckBox}
-                />
-                <span>Defauld aka 2 to 9</span>
-            </label> */}
-            
-            {/* SINGLE BOXES  */}
-            {ONE_TO_NINE.map((val) => 
-                <React.Fragment>
-                    <label className={styles.boxes}>
-                        <input
-                            onChange={e => handleSinglePick(e)}
-                            type='checkbox'
-                            value={val}
-                        />
-                        <span>{val}</span>
-                    </label>
-                </React.Fragment>)}
-        </div>
-    )
+  const handleSingleBox = (e) => {
+    if (areAllTablesChecked) setAreAllTablesChecked(false);
+    console.log("e.target.value: ",+e.target.value)
+    setBoxesFromTwoToNine(prevArr => prevArr.map((item, ind) => (+item[0] === +e.target.value)? [ind+2, !item[1]] : item));
+  }
+
+  return (
+    <div className={styles.modesWrapper}>
+      <span>Select check-boxes with an equivalent numbers you'd like to get practice with: </span>
+      <br />
+
+      <label className={styles.boxes}>
+        <input
+          onChange={handleAllTables}
+          type='checkbox'
+          checked={areAllTablesChecked}
+          ref={allTablesCheckBox}
+        />
+        <span>Defauld aka 2 to 9</span>
+      </label>
+
+      {boxesFromTwoToNine.map((boxState) =>
+        <React.Fragment>
+          <label className={styles.boxes}>
+            <input
+              onChange={e => handleSingleBox(e)}
+              type='checkbox'
+              value={boxState[0]}
+              checked={boxState[1]}
+            />
+            <span>{boxState[0]}</span>
+          </label>
+        </React.Fragment>)}
+    </div>
+  )
 }
 
 export default GameModesCheckBoxes;

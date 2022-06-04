@@ -9,7 +9,7 @@ const BaseForMathActions = ({
   gameMode,
   areAllTablesChecked,}) => {
 
-  const allowedInputKeys = ['Backspace','Delete','ArrowRight','ArrowLeft', ...Array.from(Array(9)).map((val, ind) => val = `Digit${ind}`)];
+  const allowedInputKeys = ['Backspace','Delete','ArrowRight','ArrowLeft','Tab', ...Array.from(Array(10)).map((val, ind) => val = `Digit${ind}`)];
   const input_Ref = useRef(null);
 
   const handleCheckButton = (input_Ref) => (!input_Ref.current.value) ? null : setRandQuest(createRandom(gameMode, areAllTablesChecked));
@@ -17,7 +17,7 @@ const BaseForMathActions = ({
     if(e.code === 'Enter') return handleCheckButton(input_Ref);
     if(!allowedInputKeys.includes(e.code)) return input_Ref.current.value = ''
   }
-   
+
   return (
     <div className={styles.wrapperForMathBase}>
       <span className={styles.generatedQuestion}> {randQuest} </span>
