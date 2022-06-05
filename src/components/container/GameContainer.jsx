@@ -21,8 +21,7 @@ const GameContainer = () => {
 
   return (
     <React.Fragment>
-      <div className={styles.almighty_wrapper}>
-        <div className={styles.tetris}>          
+      <div className={styles.gamingPart}>
           <BaseForMathActions
             randQuest={randQuest}
             setRandQuest={setRandQuest}
@@ -32,21 +31,21 @@ const GameContainer = () => {
             areAllTablesChecked={areAllTablesChecked} 
             setAreAllTablesChecked={setAreAllTablesChecked}
           />
-        </div>
-        <div className={styles.score_wrapper}>
           <ScorePanel
             score={score}
             gameMode={gameMode}
             setGameMode={setGameMode}
           />
-        </div>
       </div>
+      
       <GameModesCheckBoxes 
         setGameMode={setGameMode}
         gameMode={gameMode}
         areAllTablesChecked={areAllTablesChecked} 
         setAreAllTablesChecked={setAreAllTablesChecked}
       />
+
+      
     </React.Fragment>
   )
 }

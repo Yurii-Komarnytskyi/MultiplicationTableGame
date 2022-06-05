@@ -1,12 +1,7 @@
-.almighty_wrapper{
+.gamingPart {
     display: flex;
     flex-direction: row;
+    width: 50%;
     margin: 0 auto;
-}
-.tetris {    
-    display: flex;
-    align-items: center;
     padding: 50px;
-    background-color: antiquewhite;
 }
-

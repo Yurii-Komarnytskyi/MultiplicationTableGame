@@ -1,7 +1,8 @@
 .modesWrapper{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: row;
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
 }
 .boxes{
     display: flex;
