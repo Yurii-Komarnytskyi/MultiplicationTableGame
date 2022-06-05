@@ -19,7 +19,6 @@ const GameModesCheckBoxes = ({
       } 
       return acc
     },[]))
-    console.log('gameMode: ', gameMode)
   }, [boxesFromTwoToNine])
 
   const handleAllTables = () => {
@@ -35,37 +34,47 @@ const GameModesCheckBoxes = ({
 
   const handleSingleBox = (e) => {
     if (areAllTablesChecked) setAreAllTablesChecked(false);
-    console.log("e.target.value: ",+e.target.value)
     setBoxesFromTwoToNine(prevArr => prevArr.map((item, ind) => (+item[0] === +e.target.value)? [ind+2, !item[1]] : item));
   }
 
+  const actOnSpanClickOnly = (e) => { if(e.target.tagName === 'LABEL') return e.preventDefault() }
+
   return (
     <div className={styles.modesWrapper}>
-      <span>Select check-boxes with an equivalent numbers you'd like to get practice with: </span>
+      <span>Become good at : </span>
       <br />
 
-      <label className={styles.boxes}>
+      <label 
+        className={styles.labelWrapper}
+        onClick={e => actOnSpanClickOnly(e)}
+      >
         <input
+          className={styles.inputBox}
           onChange={handleAllTables}
           type='checkbox'
           checked={areAllTablesChecked}
           ref={allTablesCheckBox}
         />
-        <span>Defauld aka 2 to 9</span>
+        <span>Default aka 2 to 9</span>
       </label>
 
-      {boxesFromTwoToNine.map((boxState) =>
-        <React.Fragment>
-          <label className={styles.boxes}>
-            <input
-              onChange={e => handleSingleBox(e)}
-              type='checkbox'
-              value={boxState[0]}
-              checked={boxState[1]}
-            />
-            <span>{boxState[0]}</span>
-          </label>
-        </React.Fragment>)}
+      <div className={styles.customModes}>
+        {boxesFromTwoToNine.map((boxState) =>
+            <label 
+             className={styles.labelWrapper}
+             onClick={e => actOnSpanClickOnly(e)}
+            >
+              <input
+                className={styles.inputBox}
+                onChange={e => handleSingleBox(e)}
+                type='checkbox'
+                value={boxState[0]}
+                checked={boxState[1]}
+              />
+              <span>{boxState[0]}</span>
+            </label>)}
+        </div>
+
     </div>
   )
 }

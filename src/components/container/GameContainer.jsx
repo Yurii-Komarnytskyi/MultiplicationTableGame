@@ -43,9 +43,7 @@ const GameContainer = () => {
         gameMode={gameMode}
         areAllTablesChecked={areAllTablesChecked} 
         setAreAllTablesChecked={setAreAllTablesChecked}
-      />
-
-      
+      />      
     </React.Fragment>
   )
 }
