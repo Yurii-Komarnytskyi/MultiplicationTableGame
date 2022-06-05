@@ -6,7 +6,7 @@ import GameModesCheckBoxes from '../game_settings/GameModesCheckBoxes';
 import BaseForMathActions from '../play_ground/BaseForMathActions';
 
 const GameContainer = () => {
-  const [score, setScore] = useState({correct: 0, incorrect: -1});
+  const [score, setScore] = useState({correct: 0, incorrect: -1, total: -1});
   const [gameMode, setGameMode] = useState([]);
   const [areAllTablesChecked, setAreAllTablesChecked] = useState(true);
   const [playersAnsw, setPlayersAnsw] = useState('');

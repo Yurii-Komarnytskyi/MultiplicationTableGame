@@ -8,7 +8,13 @@ const createRandom = (arrOfTables, isDefaultModeOn = false) => {
 }
 const extractCorrectAnsw = (str) => +str[0] * +str.slice(4, 5);
 const compareGathered = (enteredVal, corectAnsw, prevScore) => {
-    (+enteredVal === corectAnsw)? prevScore.correct += 1 : prevScore.incorrect += 1;
+    if (+enteredVal === corectAnsw){
+        prevScore.correct += 1;
+        prevScore.total += 1;
+    } else {
+        prevScore.incorrect += 1;
+        prevScore.total += 1;
+    }   
     return prevScore;
 }
 
