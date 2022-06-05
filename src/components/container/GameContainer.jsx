@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styles from './GameContainer.module.css';
 import { createRandom, extractCorrectAnsw, compareGathered } from '../../utils';
-import ScorePanel from '../scorepanel/panel/ScorePanel';
+import ScorePanel from '../scorepanel/ScorePanel';
 import GameModesCheckBoxes from '../game_settings/GameModesCheckBoxes';
 import BaseForMathActions from '../play_ground/BaseForMathActions';
 
 const GameContainer = () => {
-  const [score, setScore] = useState([]);
+  const [score, setScore] = useState({correct: 0, incorrect: -1});
   const [gameMode, setGameMode] = useState([]);
   const [areAllTablesChecked, setAreAllTablesChecked] = useState(true);
   const [playersAnsw, setPlayersAnsw] = useState('');
@@ -15,7 +15,7 @@ const GameContainer = () => {
 
   useEffect(() => {
     setCorrectAnsw(extractCorrectAnsw(randQuest));
-    setScore([...score, { name: compareGathered(playersAnsw, correctAnsw), key: Date.now() }]);
+    setScore(prevScore => compareGathered(playersAnsw, correctAnsw, prevScore));
     setPlayersAnsw('');
   }, [randQuest]);
 
@@ -30,7 +30,7 @@ const GameContainer = () => {
             setPlayersAnsw={setPlayersAnsw}
             gameMode={gameMode}
             areAllTablesChecked={areAllTablesChecked} 
-            setIAreAllTablesChecked={setAreAllTablesChecked}
+            setAreAllTablesChecked={setAreAllTablesChecked}
           />
         </div>
         <div className={styles.score_wrapper}>
