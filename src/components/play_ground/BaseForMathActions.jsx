@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './BaseForMathActions.module.css';
 import { createRandom } from '../../utils';
 const BaseForMathActions = ({
@@ -11,7 +11,6 @@ const BaseForMathActions = ({
 
   const allowedInputKeys = ['Backspace','Delete','ArrowRight','ArrowLeft','Tab', ...Array.from(Array(10)).map((val, ind) => val = `Digit${ind}`)];
   const input_Ref = useRef(null);
-
   const handleCheckButton = (input_Ref) => (!input_Ref.current.value) ? null : setRandQuest(createRandom(gameMode, areAllTablesChecked));
   const handleKeyUpEvent = (e) => {
     if(e.code === 'Enter') return handleCheckButton(input_Ref);
@@ -22,11 +21,12 @@ const BaseForMathActions = ({
     <div className={styles.wrapperForMathBase}>
       <span className={styles.generatedQuestion}> {randQuest} </span>
       <input
+        className={styles.enteredVal}
+        ref={input_Ref}
         onInput={e => setPlayersAnsw(e.target.value)}
         onKeyUp={e => handleKeyUpEvent(e)}
-        ref={input_Ref}
         value={playersAnsw}
-        className={styles.enteredVal}
+        placeholder='       '
       />
       <button
         onClick={() => handleCheckButton(input_Ref)}

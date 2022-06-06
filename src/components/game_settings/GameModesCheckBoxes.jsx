@@ -37,11 +37,11 @@ const GameModesCheckBoxes = ({
     setBoxesFromTwoToNine(prevArr => prevArr.map((item, ind) => (+item[0] === +e.target.value)? [ind+2, !item[1]] : item));
   }
 
-  const actOnSpanClickOnly = (e) => { if(e.target.tagName === 'LABEL') return e.preventDefault() }
+  const actOnSpanClickOnly = (e) => (e.target.tagName === 'LABEL')? e.preventDefault() : null ;
 
   return (
     <div className={styles.modesWrapper}>
-      <span>Become good at : </span>
+      <h3>Tables of : </h3>
       <br />
 
       <label 
@@ -55,7 +55,7 @@ const GameModesCheckBoxes = ({
           checked={areAllTablesChecked}
           ref={allTablesCheckBox}
         />
-        <span>Default aka 2 to 9</span>
+        <span>All from 2 to 9</span>
       </label>
 
       <div className={styles.customModes}>
