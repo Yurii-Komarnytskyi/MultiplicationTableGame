@@ -1,0 +1,31 @@
+.modesWrapper{
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
+    font-size: 1.3em;
+}
+.modesWrapper h3{
+    margin-bottom: -10px;
+}
+
+.labelWrapper{
+    display: flex;
+    padding-left: 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    user-select: none;
+}
+
+.labelWrapper span {
+    padding-left: 10px;    
+}
+.inputBox {
+    width: 15px;
+    height: 15px;
+}
+
+.customModes {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 60%;
+}

@@ -1,0 +1,30 @@
+.wrapperForMathBase{
+    width: 80%;
+    height: fit-content;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 7px;
+    border: 2px dotted black ;
+}
+.wrapperForMathBase button {
+    height: auto;
+    font-weight: 600;
+    background: inherit;
+    border-radius: 10px;
+}
+.generatedQuestion {
+    font-size: 1.8em;
+}
+
+.enteredVal {
+    border: none;
+    text-decoration: underline;
+    background: inherit;
+    font-size: 1.8em;
+    width: 30%;
+    margin-left: 30px;
+}

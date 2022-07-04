@@ -1,0 +1,7 @@
+.gamingPart {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
+}
